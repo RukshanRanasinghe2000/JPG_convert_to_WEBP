@@ -7,8 +7,8 @@ if not exist "%output_folder%" (
     mkdir "%output_folder%"
 )
 
-:: Loop through each JPG file in the current directory
-for %%i in (*.jpg) do (
+:: Loop through each JPG and PNG file in the current directory
+for %%i in (*.jpg *.png) do (
     :: Check if the WebP file already exists in the output folder
     if not exist "%output_folder%\%%~ni.webp" (
         echo Converting "%%i" to WebP...
